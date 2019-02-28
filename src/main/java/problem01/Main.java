@@ -24,7 +24,7 @@ public class Main {
 			int answer = scanner.nextInt();
 			
 			boolean result = checkAnswer( answer );
-			if ( result ) {
+			if ( result ) {				
 				break;
 			}
 		
@@ -39,6 +39,31 @@ public class Main {
 	}
 	
 	public static boolean checkAnswer(int answer) {
-		return true;
+		boolean flag;
+		
+		if(answer > randomNumber)
+		{
+			if(max >= answer)
+			{
+				max = answer;
+			}
+			flag = false;
+		}
+		else if(answer < randomNumber)
+		{
+			if(min <= answer)
+			{
+				min = answer;
+			}
+			flag = false;
+		}
+		else
+		{
+			flag = true;
+		}
+		
+		count++;
+		
+		return flag;
 	}
 }
